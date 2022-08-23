@@ -35,7 +35,6 @@ const Todos = ({userId}) => {
 
        return (
        <div key={index} className='todo-container'>
-
         <p style={{textDecoration: element.completed ? 'line-through':'none'}} className = 'title'>{element.todo}</p>
         <hr className='horizontal'/>
         <div className='btns-container'>

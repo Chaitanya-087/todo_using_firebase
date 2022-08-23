@@ -22,7 +22,7 @@ const Home = () => {
                 <div className='navbar'>
                     <span className='logo'>TODOs</span>
                     <button className='signout' onClick={signOut}>Signout</button>
-                    <img className='avatar' src={user}/>
+                    <img className='avatar' src={user} alt='avatar'/>
                 </div>
             </div>
 
