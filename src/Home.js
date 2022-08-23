@@ -6,13 +6,15 @@ import { signOut } from './Firebase/firebase-auth'
 
 const Home = () => {
     const [userid, setUserid] = useState('');
+    const [user,setUser] = useState('');
 
     auth.onAuthStateChanged((user) => {
         if (user) {
             setUserid(user.uid);
+            setUser(user.photoURL);
         }
     })
-
+    console.log(user)
     return (
         <div className='home-wrapper'>
 
@@ -21,6 +23,7 @@ const Home = () => {
                     <span className='logo'>TODOs</span>
                     <button className='signout' onClick={signOut}>Signout</button>
                 </div>
+                <img className='avatar' src={user} alt="avatar" />
             </div>
 
             <div className="home">
