@@ -225,4 +225,6 @@ button{
   object-fit: contain;
   width: 30px;
   height: 30px;
+  border-radius:100%;
+  margin-left: 5px;
 }
