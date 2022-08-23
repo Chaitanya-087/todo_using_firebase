@@ -25,29 +25,32 @@ const Todos = ({userId}) => {
   const toggleCheck = async (todo) => {
     await updateDoc(doc(db,'todos',todo.id),{completed: !todo.completed})
   }
-  return (
+
+    return  (todos.length > 0) ? 
+    
+          
     <div className='todos-wrapper'>
-      {
-        todos.map((element,index) => {
+    {
+      todos.map((element,index) => {
 
-         return (
-         <div key={index} className='todo-container'>
+       return (
+       <div key={index} className='todo-container'>
 
-          <p style={{textDecoration: element.completed ? 'line-through':'none'}} className = 'title'>{element.todo}</p>
-          <hr className='horizontal'/>
-          <div className='btns-container'>
-            <IconButton onClick={() => {toggleCheck(element)}}>
-              <CheckCircleIcon style={{color:element.completed ? 'rgb(1,121,255)' : 'grey'}} className='check'/>
-            </IconButton>
-            <IconButton style = {{color:'#FF0000'}} onClick={() => handleDelete(element.id)} >
-                <DeleteForeverIcon className='delete'/>
-            </IconButton>
-          </div>
-         </div>)
-        })
-      }
-    </div>
-  )
+        <p style={{textDecoration: element.completed ? 'line-through':'none'}} className = 'title'>{element.todo}</p>
+        <hr className='horizontal'/>
+        <div className='btns-container'>
+          <IconButton onClick={() => {toggleCheck(element)}}>
+            <CheckCircleIcon style={{color:element.completed ? 'rgb(1,121,255)' : 'grey'}} className='check'/>
+          </IconButton>
+          <IconButton style = {{color:'#FF0000'}} onClick={() => handleDelete(element.id)} >
+              <DeleteForeverIcon className='delete'/>
+          </IconButton>
+        </div>
+       </div>)
+      })
+    }
+  </div>
+  : <p className="empty-message">No todos yet! Create to track</p> 
 }
 
 export default Todos
