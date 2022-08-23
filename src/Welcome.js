@@ -13,8 +13,8 @@ const Welcome = () => {
             </div>
             <div className='welcome-body'>
                 <div className='welcome-text-container'>
-                    <h1 className='welcome-body-text'>write todos to track your work<br/>business,studies</h1>
-                    <p className='welcome-body-para'>Sign in to start creating todos and updating as wrok progress</p>
+                    <h1 className='welcome-body-text'>write todos to track your plans,<br/>businesses,studies</h1>
+                    <p className='welcome-body-para'>Sign in to start creating todos and update as work progress</p>
                 <button className='btn-getstarted' onClick={signInWithGoogle}>Get Started <ArrowForwardIosIcon className='arrow-icon'/> </button>
                 </div>
                 <div className='waves'>
