@@ -111,15 +111,11 @@ button{
 .arrow-icon {
   font-size: 14px !important;
 }
-@media screen and (max-width:600px){
-  .welcome-body-text{
-    font-size: 24px;
-  }
-}
+
 
 /*home*/
 .home-wrapper {
-  min-height:100vh ;
+  min-height:100vh;
 }
 .home {
   width: 90%;
@@ -128,7 +124,7 @@ button{
 }
 .navbar-wrapper {
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 28%);
-  width: 100%;
+  width: 100vw;
   height:60px;
   background-color: rgb(30,42,73);
   display: flex;
@@ -157,7 +153,6 @@ button{
 
 .addTodo {
   background-color:  rgb(30,42,73);
-  max-width: fit-content;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -223,8 +218,18 @@ button{
 
 .avatar {
   object-fit: contain;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   border-radius:100%;
-  margin-left: 5px;
+  margin-left: 8px;
+}
+
+
+@media screen and (max-width:600px){
+  .welcome-body-text{
+    font-size: 24px;
+  }
+  .addTodo{
+    width: 100%;
+  }
 }
