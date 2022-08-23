@@ -1,4 +1,4 @@
-import {collection,doc,addDoc,deleteDoc,updateDoc} from 'firebase/firestore';
+import {collection,doc,addDoc,deleteDoc} from 'firebase/firestore';
 import {db} from './firebase-config'
 const userTodosRef = collection(db,'todos')
 

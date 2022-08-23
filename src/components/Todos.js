@@ -1,16 +1,13 @@
 import React, { useEffect,useState } from 'react'
 import { db } from '../Firebase/firebase-config'
 import { handleDelete } from '../Firebase/crud';
-import {collection,query,onSnapshot} from "firebase/firestore";
-
+import {collection,query,onSnapshot, updateDoc,doc} from "firebase/firestore";
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import EditIcon from '@mui/icons-material/Edit';
 import IconButton from '@mui/material/IconButton';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const Todos = ({userId}) => {
   const [todos, setTodos] = useState([]);
-  const [newTodo,setNewTodo] = useState();
   useEffect(() => {
     const q = query(collection(db,"todos"));
     const unsub = onSnapshot(q,(snapshot) => {
@@ -24,9 +21,9 @@ const Todos = ({userId}) => {
     })
     return () => unsub()
   },[userId]);
-  const [edit,setedit] = useState(Array(todos.length).fill(false));
-  const handleEdit = async (todo,title) => {
-    
+
+  const toggleCheck = async (todo) => {
+    await updateDoc(doc(db,'todos',todo.id),{completed: !todo.completed})
   }
   return (
     <div className='todos-wrapper'>
@@ -37,13 +34,10 @@ const Todos = ({userId}) => {
          <div key={index} className='todo-container'>
 
           <p style={{textDecoration: element.completed ? 'line-through':'none'}} className = 'title'>{element.todo}</p>
-
+          <hr className='horizontal'/>
           <div className='btns-container'>
-            <IconButton>
+            <IconButton onClick={() => {toggleCheck(element)}}>
               <CheckCircleIcon style={{color:element.completed ? 'rgb(1,121,255)' : 'grey'}} className='check'/>
-            </IconButton>
-            <IconButton style={{color:'#25D366'}} onClick={() => {}} >
-                <EditIcon className='edit'/>
             </IconButton>
             <IconButton style = {{color:'#FF0000'}} onClick={() => handleDelete(element.id)} >
                 <DeleteForeverIcon className='delete'/>

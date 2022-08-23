@@ -214,3 +214,9 @@ button{
   width: 100%;
   padding:8px ;
 }
+
+.horizontal {
+  width: 100%;
+  border: 0.1px solid rgba(255, 255, 255, 0.823);
+  background-color: white;
+}
