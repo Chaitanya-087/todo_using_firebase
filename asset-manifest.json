@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/todo_using_firebase/static/css/main.c4fb890f.css",
-    "main.js": "/todo_using_firebase/static/js/main.a5080842.js",
+    "main.js": "/todo_using_firebase/static/js/main.b8dd79a8.js",
     "index.html": "/todo_using_firebase/index.html",
     "main.c4fb890f.css.map": "/todo_using_firebase/static/css/main.c4fb890f.css.map",
-    "main.a5080842.js.map": "/todo_using_firebase/static/js/main.a5080842.js.map"
+    "main.b8dd79a8.js.map": "/todo_using_firebase/static/js/main.b8dd79a8.js.map"
   },
   "entrypoints": [
     "static/css/main.c4fb890f.css",
-    "static/js/main.a5080842.js"
+    "static/js/main.b8dd79a8.js"
   ]
 }
